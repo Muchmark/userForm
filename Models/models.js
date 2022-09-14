@@ -1,9 +1,9 @@
-const mongoose =require("mongoose")
+const mongoose = require("mongoose")
 let userScheama = new mongoose.Schema({
-    name:String,
-    email:String,
-    contact:String,
-    content:String
+    name: String,
+    email: String,
+    contact: String,
+    content: String
 
 })
-module.exports = mongoose.model("contact",userScheama)
+module.exports = mongoose.model("contact", userScheama)

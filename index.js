@@ -14,7 +14,7 @@ const connection = "mongodb+srv://Muchmark:mLlrGljRs180tAAS@cluster0.irij3nk.mon
 //********** */
 
 mongoose.connect(connection).then((res) => {
-    console.log('connection succesfull to mongodb..')
+
 }).catch((err) => {
     console.log(err)
 })
@@ -49,7 +49,7 @@ app.post("/submitForm", (req, res) => {
             subject: `recived message from ${req.body.name}`,
         });
 
-   //create new entry and save to mongodb
+        //create new entry and save to mongodb
         let useData = new Model(req.body)
         useData.save().then((doc) => {
             res.json({ status: 200, message: "mail sent succesfully..." })
@@ -66,4 +66,4 @@ app.post("/submitForm", (req, res) => {
 })
 //route end....
 
-app.listen(port, () => { console.log(`app is running succesfully on port ${port}`) })
+app.listen(port, () => { })
