@@ -5,7 +5,7 @@ const Model = require("../Models/models")
 router.post("/", (req, res) => {
     "use strict";
     async function main() {
-
+       // console.log("inside function")
         let transporter = nodemailer.createTransport({
             service: "gmail",
             host: "smtp.gmail.com",
