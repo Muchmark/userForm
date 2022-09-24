@@ -1,11 +1,17 @@
 #main api
-https://contactform-ivory.vercel.app/api/form# userForm
+# we canuse this api to get contact details from contact us section
+https://contactform-ivory.vercel.app/api/form # userForm
+
+# we can use this api this api to conditionaly navigate user to blog page if user submits the from 
+https://contactform-ivory.vercel.app/api/form/postForm
 
 
 
 
 
-#data fileds
+
+
+# data fileds for both contact form and post Form
 {
     name: String,
     email: String,
