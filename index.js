@@ -8,6 +8,7 @@ const form = require("./api/form")
 app.use(cors())
 app.use(express.json())
 const connection = "mongodb+srv://Muchmark:mLlrGljRs180tAAS@cluster0.irij3nk.mongodb.net/?retryWrites=true&w=majority"
+
 //establishing connection to mongodb
 //********** */
 
@@ -25,45 +26,8 @@ app.get("/", (req, res) => {
 
 
 
-//route to send email to user and save the data to mongodb 
+
 app.use('/api/form', form);
-//app.use("/api/product", product);
 
-// app.post("/submitForm", (req, res) => {
-
-//     "use strict";
-//     async function main() {
-
-//         let transporter = nodemailer.createTransport({
-//             service: "gmail",
-//             host: "smtp.gmail.com",
-//             port: 465,
-//             auth: {
-//                 user: "muchmarklbh@gmail.com",
-//                 pass: "dzlmziluuzxgrhyl",
-//             },
-//         });
-//         let info = await transporter.sendMail({
-//             to: "akshaysutarwebsite@gmail.com,saquibaowte97.sa@gmail.com",
-//             html: `<b>hii my name is ${req.body.name} and my email is ${req.body.email}</b>.${req.body.content} <b>you can contact to ${req.body.contact}</b> thanks....`,
-//             subject: `recived message from ${req.body.name}`,
-//         });
-
-//         //create new entry and save to mongodb
-//         let useData = new Model(req.body)
-//         useData.save().then((doc) => {
-//             res.json({ status: 200, message: "mail sent succesfully..." })
-//         }).catch((err) => {
-
-//         })
-//     }
-
-//     main().catch((err) => {
-//         res.json({ status: 400, message: "some error occured please try again letter.." })
-//     });
-
-
-// })
-//route end....
 
 app.listen(port, () => { })

@@ -2,10 +2,12 @@ const express = require("express")
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const Model = require("../Models/models")
+const Model2 = require("../Models/model2")
+
 router.post("/", (req, res) => {
     "use strict";
     async function main() {
-       // console.log("inside function")
+
         let transporter = nodemailer.createTransport({
             service: "gmail",
             host: "smtp.gmail.com",
@@ -34,4 +36,24 @@ router.post("/", (req, res) => {
         res.json({ status: 400, message: "some error occured please try again letter.." })
     });
 })
+
+router.post('/postForm', (req, res) => {
+
+    const data = req.body;
+
+    if (data) {
+        let Entry = new Model2(data);
+        Entry.save().then((val) => {
+
+
+        }).catch((err) => {
+            res.status(400).send("error occured..")
+        })
+        res.status(200).send("entry addded")
+    }
+    else {
+        res.status(400).send("error occured..")
+    }
+})
+
 module.exports = router;
