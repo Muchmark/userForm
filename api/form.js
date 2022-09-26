@@ -51,9 +51,7 @@ router.post('/postForm', (req, res) => {
         })
         res.status(200).send("entry addded")
     }
-    else {
-        res.status(400).send("error occured..")
-    }
+
 })
 
 module.exports = router;
