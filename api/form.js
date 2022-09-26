@@ -39,18 +39,15 @@ router.post("/", (req, res) => {
 
 router.post('/postForm', (req, res) => {
 
-    const data = req.body;
 
-    if (data) {
-        let Entry = new Model2(data);
-        Entry.save().then((val) => {
+    let Entry = new Model2(req.body);
+    Entry.save().then((val) => {
 
-
-        }).catch((err) => {
-            res.status(400).send("error occured..")
-        })
         res.status(200).send("entry addded")
-    }
+    }).catch((err) => {
+        res.status(400).send(err)
+    })
+
 
 })
 
