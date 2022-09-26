@@ -6,4 +6,4 @@ let userScheama = new mongoose.Schema({
     content: String
 
 })
-module.exports = mongoose.model("Data", userScheama)
+module.exports = mongoose.model("data", userScheama)
